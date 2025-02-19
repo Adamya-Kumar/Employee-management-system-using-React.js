@@ -12,7 +12,7 @@ const App = () => {
 
   useEffect(()=>{
     const loggedInUser = localStorage.getItem('loggedInUser')
-    
+   
     if(loggedInUser){
       const userData = JSON.parse(loggedInUser)
       setUser(userData.role)
@@ -21,7 +21,7 @@ const App = () => {
 
   },[])
 
-
+  // console.log("app.jsx ",user)
   const handleLogin = (email, password) => {
     if (email == 'admin@me.com' && password == '123') {
       setUser('admin')
@@ -44,7 +44,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user == 'admin' ? <AdminDashboard changeUser={setUser} /> : (user == 'employee' ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null) }
+      {user == 'admin' ? <AdminDashboard changeUser={setUser} data={user} /> : (user == 'employee' ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null) }
     </>
   )
 }
