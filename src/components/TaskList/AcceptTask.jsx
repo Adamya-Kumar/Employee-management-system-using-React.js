@@ -4,10 +4,10 @@ import { setLocalStorage } from '../../utils/localStorage'
 
 const AcceptTask = ({data}) => {
    const authData=useContext(AuthContext)
-   console.log("this ",data)
+//    console.log("this ",data)
 //    console.log("Acc task ",JSON.stringify(authData))
     // authData[0][1].firstName = "adamya"
-    console.log("bluw ",authData[0][0])
+    // console.log("bluw ",authData[0][0])
     // localStorage.setItem('employees',JSON.stringify(authData))
 
   
@@ -22,7 +22,7 @@ const AcceptTask = ({data}) => {
                 {data.taskDescription}
             </p>
             <div className='flex justify-between mt-6 '>
-                <button className='bg-green-500 rounded font-medium py-1 px-2 text-xs' onClick={handleMarkAsCompleted}>Mark as Completed</button>
+                <button className='bg-green-500 rounded font-medium py-1 px-2 text-xs' >Mark as Completed</button>
                 <button className='bg-red-500 rounded font-medium py-1 px-2 text-xs'>Mark as Failed</button>
             </div>
         </div>
